@@ -5,6 +5,12 @@ generatorOptions:
   disableNameSuffixHash: true
 
 configMapGenerator:
-- name: manager-config
-  files:
+- files:
   - controller_manager_config.yaml
+  name: manager-config
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- digest: sha256:b4bd0b50ee0b1630d7b5da4d8c1c604fc154b1cea420c34d42615f9da2e9d770
+  name: controller
+  newName: quay.io/olmqe/sample-operator
