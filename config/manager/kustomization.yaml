@@ -11,6 +11,6 @@ configMapGenerator:
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
-- digest: sha256:b4bd0b50ee0b1630d7b5da4d8c1c604fc154b1cea420c34d42615f9da2e9d770
+- digest: sha256:7d184d32c62a47123cafa576d428bf93c23bf79021c492119a34cd5ab1d49bfb
   name: controller
   newName: quay.io/olmqe/sample-operator

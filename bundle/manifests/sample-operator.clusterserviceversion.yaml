@@ -14,7 +14,8 @@ metadata:
         }
       ]
     capabilities: Basic Install
-    operators.operatorframework.io/builder: operator-sdk-v1.9.0+git
+    createdAt: "2026-03-09T09:27:42Z"
+    operators.operatorframework.io/builder: operator-sdk-v1.31.0-ocp
     operators.operatorframework.io/project_layout: ansible.sdk.operatorframework.io/v1
   name: sample-operator.v0.0.1
   namespace: placeholder
@@ -114,7 +115,7 @@ spec:
                 - --upstream=http://127.0.0.1:8080/
                 - --logtostderr=true
                 - --v=0
-                image: gcr.io/kubebuilder/kube-rbac-proxy@sha256:db06cc4c084dd0253134f156dddaaf53ef1c3fb3cc809e5d81711baa4029ea4c
+                image: quay.io/olmqe/kube-rbac-proxy@sha256:3789634ce5991a19bc56f3143e739d7887f1e817c0a556a4f51e27b18ab3c5d6
                 name: kube-rbac-proxy
                 ports:
                 - containerPort: 8443
@@ -135,7 +136,7 @@ spec:
                 env:
                 - name: ANSIBLE_GATHERING
                   value: explicit
-                image: quay.io/olmqe/sample-operator@sha256:b4bd0b50ee0b1630d7b5da4d8c1c604fc154b1cea420c34d42615f9da2e9d770
+                image: quay.io/olmqe/sample-operator@sha256:e83e6ae660fe7c94ec61616c622dce6640bf912667ede0c17881e10ad8812be3
                 livenessProbe:
                   httpGet:
                     path: /healthz
